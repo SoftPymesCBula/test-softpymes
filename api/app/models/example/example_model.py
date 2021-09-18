@@ -4,14 +4,14 @@
 # Models Example
 #########################################################
 
+from sqlalchemy.orm.session import Session
 from app import db
 from app.models import BaseModel
 from app.exception import InternalServerError
 from sqlalchemy.dialects.mysql import TINYINT
-from sqlalchemy.orm import validates
+from sqlalchemy.orm import validates, sessionmaker
 from sqlalchemy.sql import or_
 from app.utils import FieldValidations
-
 
 class ExampleModel(BaseModel):
     __tablename__ = 'example'
